@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Music Player</title>
+    <style>
+
+        
+        
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .main{
+            height: 100vh;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            position: relative;
+            background-color: red;
+        }
+
+        /* player css  */
+
+        .player{
+            width: 100%;
+            height: 100vh;
+            padding: 70px 70px;
+            background-color: #161616;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 40px;
+            align-items: center;
+            font-family: calibri;
+            color: white;
+            position: absolute;
+            z-index: 10;
+            margin-left: 100%;
+            transition: .3s;
+            top: 0;
+        }
+
+        .main-thumbnail{
+            width: 350px;
+            height: 350px;
+            background-color: green;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .main-thumbnail > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        audio{
+            width: 100%;
+        }
+
+        .song-desc{
+            align-self: flex-start;
+        }
+
+
+
+
+        /* list css  */
+
+        .section{
+           
+            width: 100%;
+            background-color: #161616;
+            padding: 30px 30px;
+            position: absolute;
+        }
+
+        .title{
+           
+            color: white;
+            font-size: 40px;
+            font-family: calibri;
+            
+        }
+
+        .music-list{
+           
+            width: 100%;
+            /* background-color: red; */
+            margin-top: 20px;
+        }
+
+        .tile 
+        {
+            width: 100%;
+            padding:10px 20px;
+            background-color: #313131;
+            display: flex;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .tile:hover {
+            background-color: #606060;
+        } 
+
+        .thumbnail{
+            height: 70px;
+            width: 70px;
+            border-radius:5px;
+            overflow: hidden;
+            background-color: blue;
+        }
+
+        .thumbnail > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .description{
+           padding: 0px 20px;
+           /* background-color: green; */
+           color: white;
+           font-family: calibri;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           row-gap: 3px;
+
+        }
+
+        .description > h2 {
+            font-weight: 300;
+        }
+
+        .description > h3 {
+            font-weight: 400;
+            font-size: 17px;
+        }
+
+        .close{
+            font-size: 25px;
+            cursor: pointer;
+            transition: .3s;
+            align-self: flex-end;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="player">
+
+            <p class="close" onclick="closePlayer()">
+                &#10006;
+            </p>
+
+            <div class="main-thumbnail">
+                <img class="main-thumbnail-img" src="images/blank space.jpg"/>
+            </div>
+
+            <div class="song-desc">
+                <h1 class="song-name">Song Name</h1>
+                <h3 class="song-artist">Artist Name</h3>
+            </div>
+            
+
+            <audio class="audio" controls loop></audio>
+
+
+        </div>
+
+       <div class="section">
+
+            <h1 class="title">Music Player</h1>
+
+            <div class="music-list" >
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+  
+    <script src="index.js"></script>
+</body>
+</html>
